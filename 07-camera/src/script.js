@@ -61,10 +61,10 @@ renderer.setSize(sizes.width, sizes.height);
 const clock = new THREE.Clock();
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
-  camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 3
-  camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 3
-  camera.position.y = cursor.y  * 5
-  camera.lookAt(mesh.position)
+  // camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 3
+  // camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 3
+  // camera.position.y = cursor.y  * 5
+  // camera.lookAt(mesh.position)
   controls.update()
   //   mesh.rotation.y = elapsedTime;
   renderer.render(scene, camera);
