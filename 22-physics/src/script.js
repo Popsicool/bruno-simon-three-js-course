@@ -2,7 +2,7 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "lil-gui";
-import CANNON from "cannon";
+import * as CANNON from "cannon-es";
 
 /**
  * Debug
@@ -39,10 +39,15 @@ const scene = new THREE.Scene();
 /**
  * Sound
  */
-const hitSound = new Audio("/sounds/hit.mp3")
-const playHitSound = () =>{
-    hitSound.play()
-}
+// const hitSound = new Audio("/sounds/hit.mp3")
+// const playHitSound = (collision) =>{
+//     const impactStrength = collision.contact.getImpactVelocityAlongNormal()
+//     if (impactStrength > 1.5){
+//         hitSound.volume = Math.random()
+//         hitSound.currentTime = 0
+//         hitSound.play()
+//     }
+// }
 /**
  * Textures
  */
@@ -256,7 +261,7 @@ const createBox = (width, height, depth, position) => {
     shape,
   });
   body.position.copy(position);
-  body.addEventListener("collide", playHitSound)
+//   body.addEventListener("collide", playHitSound)
   world.addBody(body);
   objectToUpdate.push({ mesh, body });
 };
